@@ -211,3 +211,270 @@ Computers understand the language of 0's and 1's called binary language. In the 
     ```
     wget https://example.com/file-to-download.txt
     ```
+## Introduction to VI
+
+**Introduction to Vi:**
+
+Vi (pronounced "vee-eye") is a text editor that is commonly found on Unix and Linux systems. It's a versatile and powerful text editor that operates in a terminal or command-line environment. Vi is known for its efficiency, especially when working with configuration files, scripts, and code.
+
+Vi is a modal editor, which means it has different modes for different tasks. There are primarily three modes in Vi:
+
+1. **Command Mode:** This is the default mode when you open a file with Vi. In this mode, you can navigate the document, issue commands, and manipulate text.
+
+2. **Insert Mode:** In Insert Mode, you can actually type and edit text. You enter Insert Mode by pressing "i" or other keys like "a," "I," "o," or "O" depending on where you want to insert text.
+
+3. **Visual Mode:** Visual Mode is used for selecting and manipulating text. It's helpful when you want to copy, cut, or replace text.
+
+Here's how you typically use Vi:
+
+- Open a file with `vi filename`.
+- Start in Command Mode.
+- Switch to Insert Mode to edit text.
+- Return to Command Mode to save, exit, or issue commands.
+
+Vi has a learning curve, but once you become proficient, it's a highly efficient text editor.
+
+**Basic Vi Commands:**
+
+1. **Opening a File with Vi:**
+   To open a file with Vi, use the command:
+   ```
+   vi filename
+   ```
+   For example, to open a file named "document.txt":
+   ```
+   vi document.txt
+   ```
+
+2. **Switch to Insert Mode:**
+   To start typing or editing text, switch to Insert Mode by pressing "i." You can use other keys like "a," "I," "o," or "O" for different insertion points.
+
+3. **Save Changes in Command Mode:**
+   - To save changes, return to Command Mode (if not already there) by pressing "Esc" and then type `:w` and press Enter.
+   - Example:
+     ```
+     :w
+     ```
+
+4. **Save and Quit:**
+   To save changes and exit Vi, return to Command Mode and type `:wq` and press Enter.
+   - Example:
+     ```
+     :wq
+     ```
+
+5. **Quit Without Saving:**
+   If you want to exit Vi without saving changes, return to Command Mode and type `:q!` and press Enter.
+   - Example:
+     ```
+     :q!
+     ```
+
+6. **Navigation in Command Mode:**
+   - Move the cursor with arrow keys or use "h," "j," "k," and "l" for left, down, up, and right, respectively.
+   - Jump to the beginning of a line with `0`.
+   - Jump to the end of a line with `$`.
+
+7. **Delete Text:**
+   - Delete the character under the cursor with `x`.
+   - Delete a line with `dd`.
+
+8. **Copy and Paste in Command Mode:**
+   - Copy (yank) a line with `yy`.
+   - Paste (put) a line with `p`.
+
+9. **Undo and Redo:**
+   - Undo with `u`.
+   - Redo with `Ctrl-r`.
+
+10. **Search in Command Mode:**
+    - Search for text with `/search_term`. Use `n` to find the next occurrence and `N` to find the previous one.
+
+11. **Replace Text:**
+    - Replace the character under the cursor with `r`.
+    - Replace text with `c` followed by a motion command. For example, `cw` changes the word under the cursor.
+
+12. **Visual Mode:**
+    - Enter Visual Mode by pressing `v`. This allows you to select text for copying or other operations.
+
+
+## File Permissions with example:
+
+File permissions in Unix-like operating systems are represented by a set of three categories (user, group, others) and three permission types (read, write, execute). These permissions determine who can access and perform actions on a file.
+
+Here's how it works, along with an example and calculation:
+
+1. **Permission Types:**
+
+   - **Read (r)**: Allows viewing or reading the contents of a file.
+   - **Write (w)**: Allows modifying the file or creating new files in a directory.
+   - **Execute (x)**: Allows running a script or traversing (entering) a directory.
+
+2. **Permission Categories:**
+
+   - **User (Owner)**: Represents the file's owner.
+   - **Group**: Refers to a specific group of users who share the same permissions.
+   - **Others (World)**: Encompasses everyone else.
+
+**Example:**
+Let's consider a file named "example.txt" with the following permissions: `rw-r--r--`. This means:
+
+- The **owner** (user) has read (r) and write (w) permissions.
+- The **group** has read (r) permission.
+- **Others** (everyone else) have read (r) permission.
+
+**Numeric Representation Calculation:**
+
+You can represent these permissions numerically by calculating the sum of permission values:
+
+- Read (r) is represented as 4.
+- Write (w) is represented as 2.
+- Execute (x) is represented as 1.
+
+For the owner, the calculation is: `r (4) + w (2) = 6`. So, the owner has a numeric representation of 6.
+
+For the group and others, they only have read permission, so their numeric representation is: `r (4)`.
+
+Therefore, the numeric representation of the file's permissions is: `644`. This is commonly referred to as the "octal" representation.
+
+So, "example.txt" has permissions of `rw-r--r--` (symbolic) or `644` (numeric). The owner can read and write, but the group and others can only read the file.
+
+## Writing the first shell script by setting permissions and executing it.
+
+To write a shell script, you can create a text file with the extension `.sh` and then use a text editor to enter your script. After writing the script, you need to set the appropriate permissions to make it executable, and then you can run it. Here's a step-by-step guide with an example:
+
+**Step 1: Write a Shell Script**
+
+1. Open a text editor (such as Vi, Nano, or Gedit) and create a new file with a `.sh` extension. For example, you can create a file named `myscript.sh`:
+   
+   ```bash
+   touch myscript.sh
+   ```
+
+2. Use the text editor to write your shell script. Here's a simple example of a shell script that prints "Hello, World!" to the terminal:
+
+   ```bash
+   #!/bin/bash
+   echo "Hello, World!"
+   ```
+
+   Save the file when you're done.
+
+**Step 2: Set Permissions**
+
+Before you can execute a shell script, you need to make it executable. To do this, you can use the `chmod` command to add the execute permission to the script file.
+
+1. Open a terminal and navigate to the directory where your script is located. For example, if your script is in your home directory, you can use the `cd` command:
+
+   ```bash
+   cd ~
+   ```
+
+2. Use the `chmod` command to add execute permission to your script:
+
+   ```bash
+   chmod +x myscript.sh
+   ```
+
+**Step 3: Execute the Shell Script**
+
+Now that your script is executable, you can run it from the terminal.
+
+1. In the terminal, navigate to the directory where your script is located, if you're not already there.
+
+2. To run the script, simply type its name and press Enter:
+
+   ```bash
+   ./myscript.sh
+   ```
+
+   The `./` prefix is used to indicate that you want to run a script from the current directory.
+
+3. You should see the output of your script in the terminal:
+
+   ```bash
+   Hello, World!
+   ```
+
+That's it! You've successfully written a shell script, set its permissions, and executed it.
+
+Remember that you can write more complex shell scripts to automate tasks, perform system administration, or any other custom tasks you need. The key is to write the shell commands in the script file, set the execution permission, and run the script when needed.
+
+## Variables in Shell scripting:
+
+In shell scripting, variables are used to store and manipulate data. They are fundamental components for creating dynamic and reusable scripts. Shell scripting supports both **global** and **local** variables, and they can hold various types of data, including text and numbers.
+
+Here are the basics of working with variables in shell scripting:
+
+**1. Variable Naming Conventions:**
+   - Variable names are case-sensitive and consist of letters, numbers, and underscores (A-Z, a-z, 0-9, and _).
+   - A variable name cannot start with a number.
+   - It's a good practice to use descriptive and meaningful names for variables.
+
+**2. Variable Assignment:**
+   - You can assign a value to a variable using the `=` operator, without spaces on either side of the `=`. For example:
+     ```bash
+     my_variable="Hello, World!"
+     ```
+
+**3. Accessing Variable Values:**
+   - To access the value of a variable, you prepend a `$` symbol to its name. For example:
+     ```bash
+     echo $my_variable
+     ```
+
+**4. Quoting Variable Values:**
+   - It's a good practice to enclose variable names in double quotes to handle spaces and special characters properly. For example:
+     ```bash
+     echo "$my_variable"
+     ```
+
+**5. Special Variables:**
+   - Shell scripts have access to various special variables such as `$0` (script name), `$1`, `$2`, ... (command line arguments), and `$#` (number of arguments).
+
+**6. Readonly Variables:**
+   - You can mark a variable as readonly using the `readonly` command to prevent its value from being changed later in the script. For example:
+     ```bash
+     readonly my_const="This is a constant value."
+     ```
+
+**7. Unsetting Variables:**
+   - To remove the value of a variable, use the `unset` command. For example:
+     ```bash
+     unset my_variable
+     ```
+
+**8. Variable Types:**
+   - By default, shell scripting uses string variables, but you can perform arithmetic operations using `$(( ))` for integer variables.
+
+**9. Global vs. Local Variables:**
+   - In shell scripting, variables are global by default. However, you can limit a variable's scope to a specific function or block by declaring it as `local` within that function.
+
+Here's a simple example of using variables in a Bash script:
+
+```bash
+#!/bin/bash
+
+# Variable assignment
+my_name="John"
+my_age=30
+
+# Accessing and displaying variables
+echo "My name is $my_name and I am $my_age years old."
+
+# Special variables
+echo "Script name: $0"
+echo "First argument: $1"
+echo "Number of arguments: $#"
+```
+
+In this script, we assign values to two variables, `my_name` and `my_age`. We then access and display their values. The special variables `$0`, `$1`, and `$#` provide information about the script and its command line arguments.
+
+Variables are essential for making shell scripts dynamic and flexible. You can use them to store user input, configuration settings, and intermediate results, among other things.
+
+
+
+
+
+
+
