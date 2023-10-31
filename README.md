@@ -1,7 +1,8 @@
-## What is an Operating Syatem..?
+# What is an Operating System?
+
 An operating system (OS) is system software that manages computer hardware and provides various services for computer programs. It serves as an intermediary between the hardware and the user/application software, ensuring that the hardware resources are used efficiently and that users can interact with the computer in a more user-friendly and organized manner.
 
-#### Examples of popular operating systems include:
+## Examples of popular operating systems include:
 
 1. **Microsoft Windows:** Various versions of the Windows OS, such as Windows 10 and Windows 11, are widely used on personal computers and laptops.
 
@@ -25,7 +26,9 @@ An operating system (OS) is system software that manages computer hardware and p
 
 These are just a few examples of operating systems, and there are many more specialized and niche operating systems designed for various purposes and devices. The choice of an operating system depends on the specific requirements and intended use of the computer or device.
 
-#### The Linux filesystem has a hierarchical structure:
+## The Linux Filesystem Hierarchy:
+
+The Linux filesystem has a hierarchical structure:
 
 1. **Root (/):** The top-level directory.
 2. **Directories:** Folders to organize files.
@@ -37,24 +40,22 @@ These are just a few examples of operating systems, and there are many more spec
 
 Understanding this structure is vital for working with Linux.
 
-#### What is Shell..?
-Computers understand the language of 0's and 1's called binary language, In the early days of computing, instructions were provided using binary language, which is difficult for all of us, to read and write. So in O/s, there is a special program called Shell. Shell accepts your instructions or commands in English and translates them into the computer's native binary language
+# What is Shell?
 
-![image](https://github.com/janjiralakirankumar/Shell-Scripting-Guide/assets/137407373/7fcfb0f4-7620-4720-ab2a-7ffda277f4df)
+Computers understand the language of 0's and 1's called binary language. In the early days of computing, instructions were provided using binary language, which is difficult for all of us to read and write. So in the OS, there is a special program called Shell. Shell accepts your instructions or commands in English and translates them into the computer's native binary language.
 
-#### Types of Shells:
+![Shell](https://github.com/janjiralakirankumar/Shell-Scripting-Guide/assets/137407373/7fcfb0f4-7620-4720-ab2a-7ffda277f4df)
+
+## Types of Shells:
 
 - **BASH (Bourne-Again Shell):** Developed by Brian Fox and Chet Ramey, it's the most common shell in Linux and is freeware.
 - **CSH (C Shell):** Created by Bill Joy at the University of California for BSD. It has syntax similar to the C programming language.
 - **KSH (Korn Shell):** Developed by David Korn at AT&T Bell Labs.
 - **TCSH:** An enhanced and compatible version of the Berkeley UNIX C shell (CSH).
 
-#### Basic Linux Commands:
-Certainly! Here's the list of basic Linux commands formatted for a GitHub README:
+## Basic Linux Commands:
 
-## Basic Linux Commands
-
-Here is a list of fundamental Linux commands with examples for each category:
+Here's a list of fundamental Linux commands with examples for each category:
 
 ### Manual:
 
@@ -67,9 +68,9 @@ Here is a list of fundamental Linux commands with examples for each category:
 - `cd`: Change the current directory. Example: `cd /home/user/documents`
 - `touch`: Create an empty file. Example: `touch newfile.txt`
 - `mkdir`: Create a new directory. Example: `mkdir new_directory`
-- `rm`: Remove files or directories. Example: To remove a file: `rm file.txt` / To remove an empty directory: `rmdir empty_directory`
+- `rm`: To remove a file: `rm file.txt` / To remove an empty directory: `rmdir empty_directory`
 - `cp`: Copy files and directories. Example: `cp file.txt /backup/`
-- `mv`: Move or rename files and directories. Example: To move a file: `mv file.txt new_location/` / To rename a file: `mv old_name.txt new_name.txt`
+- `mv`: To move a file: `mv file.txt new_location/` / To rename a file: `mv old_name.txt new_name.txt`
 - `cat`: Display file contents. Example: `cat file.txt`
 - `more`: View text files page by page. Example: `more largefile.txt`
 - `less`: View text files page by page. Example: `less bigfile.txt`
