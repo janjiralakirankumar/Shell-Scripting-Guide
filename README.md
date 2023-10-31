@@ -4,6 +4,8 @@ An operating system (OS) is system software that manages computer hardware and p
 
 ## Examples of popular operating systems include:
 
+![image](https://github.com/janjiralakirankumar/Shell-Scripting-Guide/assets/137407373/09fb24d9-59fd-4e77-b1c0-e8d8be2a5e7a)
+
 1. **Microsoft Windows:** Various versions of the Windows OS, such as Windows 10 and Windows 11, are widely used on personal computers and laptops.
 
 2. **macOS:** Developed by Apple Inc., macOS is the operating system used on Apple Macintosh computers.
@@ -30,15 +32,16 @@ These are just a few examples of operating systems, and there are many more spec
 
 The Linux filesystem has a hierarchical structure:
 
+Understanding this structure is vital for working with Linux.
+
+![image](https://github.com/janjiralakirankumar/Shell-Scripting-Guide/assets/137407373/8a86c9e8-bf05-4a26-958a-6a07a13353c9)
+
 1. **Root (/):** The top-level directory.
 2. **Directories:** Folders to organize files.
 3. **Files:** Data, programs, or links.
-4. **Mount Points:** Devices integrated into the filesystem.
-5. **File Permissions:** Control access to files.
-6. **Pathnames:** Specify file locations.
-7. **Hidden Files:** Start with a dot (.) and are often used for configuration.
-
-Understanding this structure is vital for working with Linux.
+4. **File Permissions:** Control access to files.
+5. **Pathnames:** Specify file locations.
+6. **Hidden Files:** Start with a dot (.) and are often used for configuration.
 
 # What is Shell?
 
@@ -53,42 +56,158 @@ Computers understand the language of 0's and 1's called binary language. In the 
 - **KSH (Korn Shell):** Developed by David Korn at AT&T Bell Labs.
 - **TCSH:** An enhanced and compatible version of the Berkeley UNIX C shell (CSH).
 
-## Basic Linux Commands:
+## Basic Linux Commands
 
-Here's a list of fundamental Linux commands with examples for each category:
+**File Management:**
 
-### Manual:
+1. **Create a Directory (`mkdir`)**:
+   - Command: `mkdir new_directory`
+   - Explanation: Create a new directory with the specified name. For example:
+   ```
+   mkdir my_folder
+   ```
 
-- `man`: Display manual pages for commands. Example: `man ls`
+2. **Create an Empty File (`touch`)**:
+   - Command: `touch new_file.txt`
+   - Explanation: Create an empty file with the specified name. For example:
+   ```
+   touch my_document.txt
+   ```
 
-### File Handling Commands:
+3. **List Files and Directories (`ls`)**:
+   - Command: `ls`
+   - Explanation: List files and directories in the current directory. For example:
+   ```
+   ls
+   ```
 
-- `ls`: List files and directories. Example: `ls`
-- `pwd`: Print the current working directory. Example: `pwd`
-- `cd`: Change the current directory. Example: `cd /home/user/documents`
-- `touch`: Create an empty file. Example: `touch newfile.txt`
-- `mkdir`: Create a new directory. Example: `mkdir new_directory`
-- `rm`: To remove a file: `rm file.txt` / To remove an empty directory: `rmdir empty_directory`
-- `cp`: Copy files and directories. Example: `cp file.txt /backup/`
-- `mv`: To move a file: `mv file.txt new_location/` / To rename a file: `mv old_name.txt new_name.txt`
-- `cat`: Display file contents. Example: `cat file.txt`
-- `more`: View text files page by page. Example: `more largefile.txt`
-- `less`: View text files page by page. Example: `less bigfile.txt`
-- `head`: Display the beginning of a text file. Example: `head file.txt`
-- `tail`: Display the end of a text file. Example: `tail logfile.txt`
+4. **Copy a File (`cp`)**:
+   - Command: `cp source_file.txt destination_directory/`
+   - Explanation: Copy a file to a specified destination directory. For example:
+   ```
+   cp my_file.txt /home/username/documents/
+   ```
 
-### Text Processing:
+5. **Move or Rename a File (`mv`)**:
+   - Command: `mv old_name.txt new_name.txt`
+   - Explanation: Rename a file or move it to a different location. For example:
+   ```
+   mv my_old_file.txt my_new_file.txt
+   ```
 
-- `grep`: Search text within files using regular expressions. Example: `grep "keyword" file.txt`
-- `sed`: Stream editor for text manipulation. Example: `sed 's/old-text/new-text/g' file.txt`
-- `awk`: Text processing tool for data extraction and reporting. Example: `awk '{print $1}' file.txt`
+6. **Remove a File (`rm`)**:
+   - Command: `rm file_to_delete.txt`
+   - Explanation: Delete a file with the specified name. For example:
+   ```
+   rm unwanted_file.txt
+   ```
 
-### Process Management:
+7. **View File Content (`cat`)**:
+   - Command: `cat filename.txt`
+   - Explanation: Display the contents of a file. For example:
+   ```
+   cat my_text_file.txt
+   ```
 
-- `ps`: List currently running processes. Example: `ps`
-- `top`: Provide a dynamic view of system processes. Example: `top`
-- `kill`: Terminate a process by sending a signal. Example: `kill -9 process_id`
-- `pkill`: Terminate processes based on their names. Example: `pkill -f process_name`
-- `pgrep`: List process IDs based on process names. Example: `pgrep -l process_name`
+8. **Change File Permissions (`chmod`)**:
+   - Command: `chmod permissions file`
+   - Explanation: Change the permissions of a file. For example:
+   ```
+   chmod 644 myfile.txt
+   ```
 
-Feel free to copy and paste these commands into your Linux terminal to execute them. Replace specific arguments with your own values.
+9. **Change File Ownership (`chown`)**:
+   - Command: `chown user:group file`
+   - Explanation: Change the owner and group of a file. For example:
+   ```
+   chown username:groupname myfile.txt
+   ```
+
+**Text Processing Commands:**
+
+10. **Search for Text in Files (`grep`)**:
+    - Command: `grep "search_text" file_to_search.txt`
+    - Explanation: Find specific text within a file. For example:
+    ```
+    grep "important keyword" document.txt
+    ```
+
+11. **Display the First Few Lines of a File (`head`)**:
+    - Command: `head filename.txt`
+    - Explanation: Display the first few lines of a file. For example:
+    ```
+    head my_text_file.txt
+    ```
+
+12. **Display the Last Few Lines of a File (`tail`)**:
+    - Command: `tail filename.txt`
+    - Explanation: Display the last few lines of a file. For example:
+    ```
+    tail my_text_file.txt
+    ```
+
+13. **Sort and Display Lines of Text Files (`sort`)**:
+    - Command: `sort filename.txt`
+    - Explanation: Sort and display lines in a text file in alphabetical order. For example:
+    ```
+    sort names.txt
+    ```
+
+**Working with Archives:**
+
+14. **List Contents of a Tarball (`tar`)**:
+    - Command: `tar -tvf archive_name.tar`
+    - Explanation: View the contents of a tarball without extracting it. For example:
+    ```
+    tar -tvf my_archive.tar
+    ```
+
+**Working Directories:**
+
+15. **Navigate to a Directory (`cd`)**:
+    - Command: `cd /path/to/directory`
+    - Explanation: Change your current directory to the specified path. For example:
+    ```
+    cd /home/username/documents
+    ```
+
+**Process Management:**
+
+16. **List Running Processes (`ps`)**:
+    - Command: `ps`
+    - Explanation: List the currently running processes. For example:
+    ```
+    ps
+    ```
+
+17. **Terminate a Process (`kill`)**:
+    - Command: `kill process_id`
+    - Explanation: Stop or terminate a running process by specifying its process ID. For example:
+    ```
+    kill 12345
+    ```
+
+**Disk Space and Usage:**
+
+18. **Display Disk Space Usage (`df`)**:
+    - Command: `df`
+    - Explanation: Display the disk space usage on the file system. For example:
+    ```
+    df
+    ```
+
+19. **Display File and Directory Space Usage (`du`)**:
+    - Command: `du -h directory_to_check`
+    - Explanation: Display the space used by a directory and its subdirectories. For example:
+    ```
+    du -h /path/to/directory
+    ```
+
+**Downloading Files:**
+
+20. **Download a File from the Internet (`wget`)**:
+    - Command: `wget URL`
+    - Explanation: Download a file from a specified URL. For example:
+    ```
+    wget https://example.com/file-to-download.txt
+    ```
