@@ -472,9 +472,104 @@ In this script, we assign values to two variables, `my_name` and `my_age`. We th
 
 Variables are essential for making shell scripts dynamic and flexible. You can use them to store user input, configuration settings, and intermediate results, among other things.
 
+## Arithmetical Calculations:
 
+**Basic Arithmetic:**
 
+You can do simple math like addition, subtraction, multiplication, division, and finding the remainder using `+`, `-`, `*`, `/`, and `%` operators, respectively. For example:
 
+```bash
+result=$((5 + 3))
+echo "5 + 3 equals $result"
+```
 
+**Increment and Decrement:**
 
+You can increase or decrease a number using `++` and `--`. For instance:
 
+```bash
+num=5
+((num++))  # This increases num by 1
+((num--))  # This decreases num by 1
+echo "After increment and decrement, num is now $num"
+```
+
+**Math Expressions:**
+
+You can use parentheses for more complicated math expressions:
+
+```bash
+total=$((2 * (3 + 4)))
+echo "2 times (3 plus 4) is $total"
+```
+
+**Comparison and Logical Operators:**
+
+You can use comparison operators (`>`, `<`, `>=`, `<=`, `==`, `!=`) and logical operators (`&&` for AND, `||` for OR) to make decisions in your scripts:
+
+```bash
+a=5
+b=7
+((is_greater = a > b))
+echo "Is 'a' greater than 'b'? $is_greater"
+```
+
+```bash
+x=10
+y=5
+((is_true = (x > y) && (x % 2 == 0)))
+echo "Is 'x' greater than 'y' and even? $is_true"
+```
+
+**Using Variables:**
+
+You can perform math with variables and store the result in another variable:
+
+```bash
+num1=8
+num2=3
+((sum = num1 + num2))
+echo "The sum of num1 and num2 is $sum"
+```
+
+These simple examples show how you can use basic arithmetic, increment or decrement values, perform more complex math, make comparisons, and work with variables in shell scripts.
+
+## Write a shell script to determine the largest number among three integer numbers
+
+```bash
+#!/bin/bash
+
+# Input three integers from the user
+echo "Enter three integers:"
+read num1
+read num2
+read num3
+
+# Check which number is the largest
+if [ "$num1" -gt "$num2" ] && [ "$num1" -gt "$num3" ]; then
+  largest="$num1"
+elif [ "$num2" -gt "$num1" ] && [ "$num2" -gt "$num3" ]; then
+  largest="$num2"
+else
+  largest="$num3"
+fi
+
+# Display the result
+echo "The largest number among $num1, $num2, and $num3 is $largest."
+```
+
+You can save this script in a file, for example, "find_largest.sh," make it executable with the `chmod +x find_largest.sh` command, and then run it. Here's how you can run the script:
+
+```bash
+$ ./find_largest.sh
+```
+
+The script will prompt you to enter three integers, and it will then determine and display the largest number among the three. For example:
+
+```
+Enter three integers:
+15
+8
+23
+The largest number among 15, 8, and 23 is 23.
+```
